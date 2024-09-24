@@ -1,6 +1,6 @@
 
 # jim-emacs-fun-typescript
-* differences between **JavaScript** and **TypeScript**:
+* differences between **JavaScript** and **TypeScript**
 
 - [jim-emacs-fun-typescript](#jim-emacs-fun-typescript)
     - [1. **Type Annotations**](#1-type-annotations)
