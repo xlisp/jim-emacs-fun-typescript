@@ -1,0 +1,13 @@
+digraph G {
+    "Animal" [shape=box];
+    "Animal" -> "Animal.eat";
+    "Animal.eat" [shape=ellipse];
+    "Dog" [shape=box];
+    "Dog" -> "Dog.bark";
+    "Dog.bark" [shape=ellipse];
+    "Animal" -> "Dog" [label="inherits"];
+    "Cat" [shape=box];
+    "Cat" -> "Cat.meow";
+    "Cat.meow" [shape=ellipse];
+    "Animal" -> "Cat" [label="inherits"];
+}
