@@ -12,20 +12,23 @@ function extractFunctionCalls(sourceFile) {
     var functionCalls = {};
     var currentFunction = null;
     function visit(node) {
+        // Log the node for debugging
+        console.log("Visiting node:", ts.SyntaxKind[node.kind]);
+        // Check if the node is a function declaration and has a valid name
         if (ts.isFunctionDeclaration(node) && node.name) {
-            // We found a function declaration
-            currentFunction = node.name.getText();
+            currentFunction = node.name.getText(sourceFile);
             if (!functionCalls[currentFunction]) {
                 functionCalls[currentFunction] = [];
             }
         }
-        else if (ts.isCallExpression(node)) {
-            // We found a function call
-            var functionName = node.expression.getText();
+        // Check if the node is a call expression and if it has a valid expression (function name)
+        else if (ts.isCallExpression(node) && node.expression) {
+            var functionName = node.expression.getText(sourceFile);
             if (currentFunction && functionName) {
                 functionCalls[currentFunction].push(functionName);
             }
         }
+        // Recursively visit child nodes
         ts.forEachChild(node, visit);
     }
     ts.forEachChild(sourceFile, visit);
@@ -47,6 +50,11 @@ function generateGraphviz(functionCalls) {
 // Main function to parse TypeScript file and output the Graphviz DOT format
 function main(fileName) {
     var sourceFile = getSourceFile(fileName);
+    if (!sourceFile) {
+        console.error("Could not read source file: ".concat(fileName));
+        return;
+    }
+    console.log("Parsing file: ".concat(fileName));
     var functionCalls = extractFunctionCalls(sourceFile);
     var graphvizOutput = generateGraphviz(functionCalls);
     // Write the DOT file
