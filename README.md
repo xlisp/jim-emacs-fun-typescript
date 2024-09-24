@@ -1,6 +1,26 @@
-# jim-emacs-fun-typescript
 
+# jim-emacs-fun-typescript
 * differences between **JavaScript** and **TypeScript**:
+
+- [jim-emacs-fun-typescript](#jim-emacs-fun-typescript)
+    - [1. **Type Annotations**](#1-type-annotations)
+    - [2. **Static Typing and Error Checking**](#2-static-typing-and-error-checking)
+    - [3. **Interfaces (TypeScript Only)**](#3-interfaces-typescript-only)
+    - [4. **Classes and Access Modifiers**](#4-classes-and-access-modifiers)
+    - [5. **Union Types (TypeScript Only)**](#5-union-types-typescript-only)
+    - [6. **Compilation**](#6-compilation)
+    - [7. **Generics (TypeScript Only)**](#7-generics-typescript-only)
+    - [8. **Default Parameters**](#8-default-parameters)
+    - [9. **Destructuring with Types**](#9-destructuring-with-types)
+    - [10. **Function Overloading (TypeScript Only)**](#10-function-overloading-typescript-only)
+    - [11. **Enums (TypeScript Only)**](#11-enums-typescript-only)
+    - [12. **Tuples (TypeScript Only)**](#12-tuples-typescript-only)
+    - [13. **Asynchronous Programming with Type Inference**](#13-asynchronous-programming-with-type-inference)
+    - [14. **Optional Chaining and Nullish Coalescing**](#14-optional-chaining-and-nullish-coalescing)
+    - [15. **Declaration Merging (TypeScript Only)**](#15-declaration-merging-typescript-only)
+
+
+
 
 ### 1. **Type Annotations**
 
